@@ -1,0 +1,7 @@
+D:\GRADEBOOK\src\GradeBook\bin\Debug\GradeBook.exe
+D:\GRADEBOOK\src\GradeBook\bin\Debug\GradeBook.pdb
+D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.csproj.AssemblyReference.cache
+D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.csproj.SuggestedBindingRedirects.cache
+D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.csproj.CoreCompileInputs.cache
+D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.exe
+D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.pdb
