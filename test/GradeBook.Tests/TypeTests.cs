@@ -5,16 +5,40 @@ using Xunit;
 
 namespace GradeBook.Tests {
 
+    //Делегат как переменная, только для методов
+    public delegate string WriteLogDelegate( string logMessage ); //важно возвращаемое значение и тип параметра(ов)
+
     public class TypeTests {
-        [Fact] 
+        int count = 0;
+
+        [Fact]
+        public void WriteLogDelegateCanPointToMethod() {
+            //singleCast delegat
+            WriteLogDelegate log = ReturnMessage; //создали переменную типа делегат в которую занесли ссылку на метод ReturnMessage
+            log += ReturnCounter;
+            var result = log( "Hello!" ); //переменная LOG имеет тип делегата, а это ссылка на метод, который  мы можем вызвать
+            Assert.Equal( 2, count );
+        }
+
+        string ReturnCounter( string message ) {
+            count++;
+            return message;
+        }
+
+        string ReturnMessage( string message ) {
+            count++;
+            return message;
+        }
+
+        [Fact]
         public void StringsAreImmutable() {
             string myName = "Tony"; //string is reference type but behave like value type
             string upper = myName.ToUpper(); // immutable. Cant change myName, ToUpper returns a copy instead of modifying myName 
-            
-            Assert.Equal("Tony", myName);
-            Assert.Equal("TONY", upper);
 
+            Assert.Equal( "Tony", myName );
+            Assert.Equal( "TONY", upper );
         }
+
         [Fact]
         public void ValueTypeAlsoPassByValue() {
             int x = GetInt();
