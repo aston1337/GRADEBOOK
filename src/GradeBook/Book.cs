@@ -5,6 +5,7 @@ namespace GradeBook {
 
     public class Book {
         public Book( string name ) { //constructor, cant have return type, same name as class
+            category = "Science";
             grades = new List<double>();
             this.Name = name; //this указывает на поле name в объекте, для которого вызывается
         }
@@ -100,6 +101,7 @@ namespace GradeBook {
 
         //no need in new way of define setter getter
         //private string name; //property that has setter getter (we can adjust the property)
+        private readonly string category; // readonly может инициализироваться только в конструкторе или при объявлении поля; 
     }
 
 }
