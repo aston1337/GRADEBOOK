@@ -79,9 +79,20 @@ namespace GradeBook {
         // если добавить static для AddGrade & field grades то сколько бы мы не создавали объектов типа Book
         // список будет всегда один и все оценки из разных объектов запишутся в один этот список
         private List<double> grades; //field definition, private by default
+        //list is dynamic   
 
-        //list is dynamic
-        public string Name;
+        public string Name {
+            get {
+                return name.ToUpper();
+            }
+            set {
+                if ( !String.IsNullOrEmpty( value ) ) {
+                    name = value;
+                }
+            }
+        }
+
+        private string name; //property that has setter getter (we can adjust the property)
     }
 
 }
