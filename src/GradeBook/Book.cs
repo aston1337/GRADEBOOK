@@ -9,9 +9,9 @@ namespace GradeBook {
             this.Name = name; //this указывает на поле name в объекте, для которого вызывается
         }
 
-        public void AddGradeLetter( char letter ) {
-            switch ( letter ) {
-                case 'A':
+        public void AddGrade( char letter ) { //method overloading by signature.
+            switch ( letter ) { //The signature is Method name + params (return type is not a signature)  
+                case 'A': //ref out in do not affect on overloading  
                     AddGrade( 90 );
                     break;
                 case 'B':
@@ -23,8 +23,8 @@ namespace GradeBook {
                 case 'D':
                     AddGrade( 60 );
                     break;
-                default: 
-                    AddGrade(0);
+                default:
+                    AddGrade( 0 );
                     break;
             }
         }
@@ -56,16 +56,16 @@ namespace GradeBook {
             result.Average /= grades.Count;
 
             switch ( result.Average ) {
-                case var d when d >= 90.0 :
+                case var d when d >= 90.0:
                     result.Letter = 'A';
                     break;
-                case var d when d >= 80.0 :
+                case var d when d >= 80.0:
                     result.Letter = 'B';
                     break;
-                case var d when d >= 70.0 :
+                case var d when d >= 70.0:
                     result.Letter = 'C';
                     break;
-                case var d when d >= 60.0 :
+                case var d when d >= 60.0:
                     result.Letter = 'D';
                     break;
                 default:
