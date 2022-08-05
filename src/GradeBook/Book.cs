@@ -81,7 +81,8 @@ namespace GradeBook {
         private List<double> grades; //field definition, private by default
         //list is dynamic   
 
-        public string Name {
+        //old way to define getter setter
+        /*public string Name { 
             get {
                 return name.ToUpper();
             }
@@ -90,9 +91,15 @@ namespace GradeBook {
                     name = value;
                 }
             }
+        }*/
+
+        public string Name {
+            get;
+            private set; //unavailable to set name after it was set in constructor
         }
 
-        private string name; //property that has setter getter (we can adjust the property)
+        //no need in new way of define setter getter
+        //private string name; //property that has setter getter (we can adjust the property)
     }
 
 }
