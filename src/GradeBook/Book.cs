@@ -33,7 +33,7 @@ namespace GradeBook {
             if ( grade <= 100 && grade >= 0 ) {
                 grades.Add( grade );
             } else {
-                Console.WriteLine( "Invalid Value" );
+                throw new ArgumentException( $"Invalid {nameof(grade)}" ); // при неправильном вводе данных выбросит эксепшн, который мы должны поймать в коде, где был вызван этот метод
             }
         }
 

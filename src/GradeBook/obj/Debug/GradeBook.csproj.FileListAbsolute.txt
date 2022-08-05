@@ -5,3 +5,10 @@ D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.csproj.SuggestedBindingRedirects.
 D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.csproj.CoreCompileInputs.cache
 D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.exe
 D:\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.pdb
+D:\Repos\GRADEBOOK\src\GradeBook\bin\Debug\GradeBook.exe
+D:\Repos\GRADEBOOK\src\GradeBook\bin\Debug\GradeBook.pdb
+D:\Repos\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.csproj.AssemblyReference.cache
+D:\Repos\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.csproj.SuggestedBindingRedirects.cache
+D:\Repos\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.csproj.CoreCompileInputs.cache
+D:\Repos\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.exe
+D:\Repos\GRADEBOOK\src\GradeBook\obj\Debug\GradeBook.pdb

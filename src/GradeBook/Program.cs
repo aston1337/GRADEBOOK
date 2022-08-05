@@ -22,8 +22,19 @@ namespace GradeBook {
                 if ( input == "q" ) {
                     break;
                 }
-                double gradeInput = double.Parse( input );
-                book.AddGrade( gradeInput );
+
+                try {
+                    double gradeInput = double.Parse( input );
+                    book.AddGrade( gradeInput );
+                } catch ( ArgumentException e ) {
+                    Console.WriteLine( e.Message );
+                } catch ( FormatException e ) {
+                    Console.WriteLine( e.Message );
+                } finally {
+                    Console.WriteLine( "****Exeption is handled****" );
+                }
+                
+                
             } while (true);
             
             //Book.AddGrade( 12.4 ); // Обращение через класс, а не через объект
