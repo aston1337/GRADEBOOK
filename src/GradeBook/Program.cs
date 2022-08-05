@@ -42,7 +42,7 @@ namespace GradeBook {
             //book.grades.Add(84.3  ); // обращение напрямую к полю grades в классе Book
             Statistics stats = book.GetStatistic(); //incapsulation - hide complexity
             Console.WriteLine( book.Name.ToUpper() );
-
+            Console.WriteLine( Book.CATEGORY ); // we have access to read, but not to overwrite
             Console.WriteLine( $"The average grade is {stats.Average:N1}\nThe highest grade is {stats.High}\nThe lowes grade is {stats.Low}\nThe mark grade is {stats.Letter}" ); //N1 - shorts the double to 1 digit after comma 20.1
         }
     }
