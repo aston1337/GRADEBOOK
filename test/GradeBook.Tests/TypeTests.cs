@@ -16,7 +16,7 @@ namespace GradeBook.Tests {
             //singleCast delegat
             WriteLogDelegate log = ReturnMessage; //создали переменную типа делегат в которую занесли ссылку на метод ReturnMessage
             log += ReturnCounter; // multicast delegate
-            var result = log( "Hello!" ); //переменная LOG имеет тип делегата, а это ссылка на метод, который  мы можем вызвать
+            string result = log( "Hello!" ); //переменная LOG имеет тип делегата, а это ссылка на метод, который  мы можем вызвать
             Assert.Equal( 2, count ); //при вызове метода LOG(переменная типа мультикаст делегат) вызовутся сразу два метода, ссылки на которые в эту переменную занесены
         }
 

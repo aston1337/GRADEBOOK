@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace GradeBook {
 
+    public delegate void GradeAddedDelegate( object sender, EventArgs args );
+
     public class Book {
         public Book( string name ) { //constructor, cant have return type, same name as class
             //category = "Science";
@@ -33,10 +35,16 @@ namespace GradeBook {
         public void AddGrade( double grade ) {
             if ( grade <= 100 && grade >= 0 ) {
                 grades.Add( grade );
+
+                if ( grade != null ) {
+                    GradeAdded( this, new EventArgs() );
+                }
             } else {
                 throw new ArgumentException( $"Invalid {nameof(grade)}" ); // при неправильном вводе данных выбросит эксепшн, который мы должны поймать в коде, где был вызван этот метод
             }
         }
+
+        public event GradeAddedDelegate GradeAdded;
 
         public Statistics GetStatistic() {
             Statistics result = new Statistics();

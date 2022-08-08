@@ -11,13 +11,14 @@ namespace GradeBook {
     class MyBook {
         public static void Main( string[] args ) { //Method Main entry point, string[] - type of parametr(string array), args - name of parametr
             /*
-            MyBook staicMain = new MyBook(); 
+            MyBook staticMain = new MyBook(); 
             staticMain.Main( args ); из-за статик мы не можем получить доступ к методам функции мэин, только через класс
             */
 
             Book book = new Book( "Aston's book" );
-
             //book.AddGrade(89.1); //вызов метода для объекта типа Book из класса Book
+            book.GradeAdded += OnGradeAdded;
+
             do {
                 Console.Write( "Enter grade: " );
                 string input = Console.ReadLine();
@@ -45,6 +46,11 @@ namespace GradeBook {
             Console.WriteLine( Book.CATEGORY ); // we have access to read, but not to overwrite
             Console.WriteLine( $"The average grade is {stats.Average:N1}\nThe highest grade is {stats.High}\nThe lowes grade is {stats.Low}\nThe mark grade is {stats.Letter}" ); //N1 - shorts the double to 1 digit after comma 20.1
         }
+
+        static void OnGradeAdded( object sender, EventArgs args ) {
+            Console.WriteLine( "A grade was added" );
+        }
+
     }
 
 }
