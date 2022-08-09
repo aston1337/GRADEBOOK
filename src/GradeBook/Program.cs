@@ -29,7 +29,7 @@ namespace GradeBook {
             Console.WriteLine( $"The average grade is {stats.Average:N1}\nThe highest grade is {stats.High}\nThe lowes grade is {stats.Low}\nThe mark grade is {stats.Letter}" ); //N1 - shorts the double to 1 digit after comma 20.1
         }
 
-        private static void EnterGrades( Book book ) { // заменили InMemoryBook на Book - полиморфизм. В самом коде мы не знаем какой AddGrade выполнится, но мы знаем что у него есть несколько поведений
+        private static void EnterGrades( IBook book ) { // заменили InMemoryBook на Book - полиморфизм. В самом коде мы не знаем какой AddGrade выполнится, но мы знаем что у него есть несколько поведений
             do {
                 Console.Write( "Enter grade: " );
                 string input = Console.ReadLine();

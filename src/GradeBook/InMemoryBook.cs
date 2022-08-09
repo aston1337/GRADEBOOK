@@ -33,7 +33,7 @@ namespace GradeBook {
             }
         }
 
-        public override void AddGrade( double grade ) {
+        public override void AddGrade( double grade ) { // override используется при полиморфизме, что бы перезаписать абстрактный метод, именно тем методом, который будет исполнен
             if ( grade <= 100 && grade >= 0 ) {
                 grades.Add( grade );
 
@@ -45,9 +45,9 @@ namespace GradeBook {
             }
         }
 
-        public event GradeAddedDelegate GradeAdded;
+        public override event GradeAddedDelegate GradeAdded;
 
-        public Statistics GetStatistic() {
+        public override Statistics GetStatistic() {
             Statistics result = new Statistics();
             result.Average = 0.0;
             result.High = Double.MinValue;
