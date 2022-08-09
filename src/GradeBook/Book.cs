@@ -5,7 +5,7 @@ namespace GradeBook {
 
     public delegate void GradeAddedDelegate( object sender, EventArgs args );
 
-    public class Book {
+    public class Book : NamedObject {
         public Book( string name ) { //constructor, cant have return type, same name as class
             //category = "Science";
             grades = new List<double>();
@@ -102,12 +102,6 @@ namespace GradeBook {
             }
         }*/
 
-        public string Name {
-            get;
-            set; // if has private - unavailable to set name after it was set in constructor
-        }
-
-        //private string name;//no need in new way of define setter getter //property that has setter getter (we can adjust the property)
         //private readonly string category = "Science"; // readonly может инициализироваться только в конструкторе или при объявлении поля; 
         public const string CATEGORY = "Science"; // cant be changed anywhere, accessable everywhere
         //like a static member CATEGORY, can be accessed via CLASS, no via object
