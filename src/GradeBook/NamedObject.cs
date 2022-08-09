@@ -1,6 +1,8 @@
-﻿namespace GradeBook {
+﻿using System;
 
-    public class NamedObject {
+namespace GradeBook {
+
+    public class NamedObject : Object { //Object - базовый класс, от которого все наследуются. Указывать явно ненужно.
         public NamedObject( string name ) {
             Name = name;
         }

@@ -19,6 +19,17 @@ namespace GradeBook {
             //book.AddGrade(89.1); //вызов метода для объекта типа Book из класса Book
             book.GradeAdded += OnGradeAdded;
 
+            EnterGrades( book );
+
+            //Book.AddGrade( 12.4 ); // Обращение через класс, а не через объект
+            //book.grades.Add(84.3  ); // обращение напрямую к полю grades в классе Book
+            Statistics stats = book.GetStatistic(); //incapsulation - hide complexity
+            Console.WriteLine( book.Name.ToUpper() );
+            Console.WriteLine( Book.CATEGORY ); // we have access to read, but not to overwrite
+            Console.WriteLine( $"The average grade is {stats.Average:N1}\nThe highest grade is {stats.High}\nThe lowes grade is {stats.Low}\nThe mark grade is {stats.Letter}" ); //N1 - shorts the double to 1 digit after comma 20.1
+        }
+
+        private static void EnterGrades( Book book ) {
             do {
                 Console.Write( "Enter grade: " );
                 string input = Console.ReadLine();
@@ -38,13 +49,6 @@ namespace GradeBook {
                     Console.WriteLine( "****Exeption is handled****" );
                 }
             } while ( true );
-
-            //Book.AddGrade( 12.4 ); // Обращение через класс, а не через объект
-            //book.grades.Add(84.3  ); // обращение напрямую к полю grades в классе Book
-            Statistics stats = book.GetStatistic(); //incapsulation - hide complexity
-            Console.WriteLine( book.Name.ToUpper() );
-            Console.WriteLine( Book.CATEGORY ); // we have access to read, but not to overwrite
-            Console.WriteLine( $"The average grade is {stats.Average:N1}\nThe highest grade is {stats.High}\nThe lowes grade is {stats.Low}\nThe mark grade is {stats.Letter}" ); //N1 - shorts the double to 1 digit after comma 20.1
         }
 
         static void OnGradeAdded( object sender, EventArgs args ) {
