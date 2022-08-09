@@ -18,14 +18,14 @@ namespace GradeBook.Tests {
         [Fact]
         public void BookCalculatesAnAverageGrade() {
             //arrange
-            Book book = new Book( "" );
+            InMemoryBook inMemoryBook = new InMemoryBook( "" );
 
-            book.AddGrade( 89.1 );
-            book.AddGrade( 90.1 );
-            book.AddGrade( 73.3 );
+            inMemoryBook.AddGrade( 89.1 );
+            inMemoryBook.AddGrade( 90.1 );
+            inMemoryBook.AddGrade( 73.3 );
 
             //act
-            Statistics result = book.GetStatistic();
+            Statistics result = inMemoryBook.GetStatistic();
 
             //assert
             Assert.Equal( 84.2, result.Average, 1 );

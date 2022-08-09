@@ -15,9 +15,9 @@ namespace GradeBook {
             staticMain.Main( args ); из-за статик мы не можем получить доступ к методам функции мэин, только через класс
             */
 
-            Book book = new Book( "Aston's book" );
+            InMemoryBook book = new InMemoryBook( "Aston's book" );
             //book.AddGrade(89.1); //вызов метода для объекта типа Book из класса Book
-            book.GradeAdded += OnGradeAdded;
+            book.GradeAdded += OnGradeAdded; // подписались на событие, слушатель
 
             EnterGrades( book );
 
@@ -25,11 +25,11 @@ namespace GradeBook {
             //book.grades.Add(84.3  ); // обращение напрямую к полю grades в классе Book
             Statistics stats = book.GetStatistic(); //incapsulation - hide complexity
             Console.WriteLine( book.Name.ToUpper() );
-            Console.WriteLine( Book.CATEGORY ); // we have access to read, but not to overwrite
+            Console.WriteLine( InMemoryBook.CATEGORY ); // we have access to read, but not to overwrite
             Console.WriteLine( $"The average grade is {stats.Average:N1}\nThe highest grade is {stats.High}\nThe lowes grade is {stats.Low}\nThe mark grade is {stats.Letter}" ); //N1 - shorts the double to 1 digit after comma 20.1
         }
 
-        private static void EnterGrades( Book book ) {
+        private static void EnterGrades( Book book ) { // заменили InMemoryBook на Book - полиморфизм. В самом коде мы не знаем какой AddGrade выполнится, но мы знаем что у него есть несколько поведений
             do {
                 Console.Write( "Enter grade: " );
                 string input = Console.ReadLine();
@@ -51,7 +51,7 @@ namespace GradeBook {
             } while ( true );
         }
 
-        static void OnGradeAdded( object sender, EventArgs args ) {
+        static void OnGradeAdded( object sender, EventArgs args ) { // код, который выполнится при выстреле события, имеет такую же структуру как делегат
             Console.WriteLine( "A grade was added" );
         }
 
