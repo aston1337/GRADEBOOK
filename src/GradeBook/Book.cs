@@ -6,9 +6,10 @@ namespace GradeBook {
     public delegate void GradeAddedDelegate( object sender, EventArgs args );
 
     public class Book : NamedObject {
-        public Book( string name ) { //constructor, cant have return type, same name as class
-            //category = "Science";
-            grades = new List<double>();
+        public Book( string name ) : base( name ) { //constructor, can't have return type, same name as class
+            //category = "Science";               //BASE(name) этот конструктор в классе namedobject так же должен быть сконструирован, как и данный.
+            grades = new List<double>(); //Поэтому необходимо обязательно передать ему параметр либо пустую строку либо такой же параметр как и в данном конструкторе 
+
             this.Name = name; //this указывает на поле name в объекте, для которого вызывается
         }
 

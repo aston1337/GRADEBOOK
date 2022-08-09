@@ -1,6 +1,10 @@
 ﻿namespace GradeBook {
 
     public class NamedObject {
+        public NamedObject( string name ) {
+            Name = name;
+        }
+
         public string Name {
             get;
             set; // if has private - unavailable to set name after it was set in constructor
